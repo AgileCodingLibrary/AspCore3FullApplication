@@ -1,0 +1,66 @@
+﻿@model LittlePacktBookstore.Models.Registration
+@{
+	ViewData["Title"] = "Register2";
+}
+
+<div class="container">
+	<div class="jumbotron">
+		<h2 class="text-center">Register using ASP Tag Helper</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<form asp-action="Register">
+				<div class="form-group">
+					<label asp-for="FirstName" class="control-label"></label>
+					<input asp-for="FirstName" class="form-control" />
+					<span asp-validation-for="FirstName" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="LastName" class="control-label"></label>
+					<input asp-for="LastName" class="form-control" />
+					<span asp-validation-for="LastName" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Email" class="control-label"></label>
+					<input asp-for="Email" class="form-control" />
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="MailingAddress.Address1" class="control-label"></label>
+					<input asp-for="MailingAddress.Address1" class="form-control" />
+					<span asp-validation-for="MailingAddress.Address1" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="MailingAddress.Address2" class="control-label"></label>
+					<input asp-for="MailingAddress.Address2" class="form-control" />
+					<span asp-validation-for="MailingAddress.Address2" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="MailingAddress.City" class="control-label"></label>
+					<input asp-for="MailingAddress.City" class="form-control" />
+					<span asp-validation-for="MailingAddress.City" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="MailingAddress.Zip" class="control-label"></label>
+					<input asp-for="MailingAddress.Zip" class="form-control" />
+					<span asp-validation-for="MailingAddress.Zip" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="MailingAddress.State" class="control-label"></label>
+					<input asp-for="MailingAddress.State" class="form-control" />
+					<span asp-validation-for="MailingAddress.State" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="MailingAddress.Country" class="control-label"></label>
+					<select asp-for="MailingAddress.Country" asp-items="Model.MailingAddress.Countries" class="form-control"></select>
+					<span asp-validation-for="MailingAddress.Country" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Register" class="btn btn-default" />
+				</div>
+			</form>
+			<a asp-controller="Home" asp-action="Index" asp-route-id="@Model.Id">Home</a>
+		</div>
+	</div>
+</div>
+

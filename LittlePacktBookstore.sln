@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LittlePacktBookstore", "LittlePacktBookstore\LittlePacktBookstore.csproj", "{AA67ADCC-5DDC-4939-83AB-8E25998F1DCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0C17A36E-40F4-45CF-A256-2FE7C532EF0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LittlePacktBookStore.Tests", "LittlePacktBookStore.Tests\LittlePacktBookStore.Tests.csproj", "{6BF6E57F-A512-454C-A133-3C8163E60724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA67ADCC-5DDC-4939-83AB-8E25998F1DCC}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{AA67ADCC-5DDC-4939-83AB-8E25998F1DCC}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{AA67ADCC-5DDC-4939-83AB-8E25998F1DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA67ADCC-5DDC-4939-83AB-8E25998F1DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF6E57F-A512-454C-A133-3C8163E60724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF6E57F-A512-454C-A133-3C8163E60724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF6E57F-A512-454C-A133-3C8163E60724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF6E57F-A512-454C-A133-3C8163E60724}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BF6E57F-A512-454C-A133-3C8163E60724} = {0C17A36E-40F4-45CF-A256-2FE7C532EF0C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE53177E-85D8-429A-A262-1038A20A3F59}
+	EndGlobalSection
+EndGlobal

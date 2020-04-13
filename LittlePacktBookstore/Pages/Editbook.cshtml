@@ -1,0 +1,58 @@
+﻿@page "{Id}"
+@model EditBookModel
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+	<div class="jumbotron">
+		<h2 class="text-center">Edit</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<form method="post">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+					<input type="hidden" asp-for="Book.Id" />
+					<div class="form-group">
+						<label asp-for="Book.Title" class="control-label"></label>
+						<input asp-for="Book.Title" class="form-control" />
+						<span asp-validation-for="Book.Title" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Book.Description" class="control-label"></label>
+						<input asp-for="Book.Description" class="form-control" />
+						<span asp-validation-for="Book.Description" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Book.Author" class="control-label"></label>
+						<input asp-for="Book.Author" class="form-control" />
+						<span asp-validation-for="Book.Author" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Book.PublishDate" class="control-label"></label>
+						<input asp-for="Book.PublishDate" class="form-control" />
+						<span asp-validation-for="Book.PublishDate" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Book.Price" class="control-label"></label>
+						<input asp-for="Book.Price" class="form-control" />
+						<span asp-validation-for="Book.Price" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Book.image" class="control-label"></label>
+						<input asp-for="Book.image" class="form-control" />
+						<span asp-validation-for="Book.image" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Save" class="btn btn-default" />
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div>
+			<a asp-page="./ListBooks">Back to List</a>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model LittlePacktBookstore.Models.Order
+
+@{
+	ViewData["Title"] = "Details";
+	var isAdmin = User.IsInRole("Admin");
+	if (isAdmin)
+	{
+		Layout = "~/Views/Shared/admin/_adminLayout.cshtml";
+	}
+	else
+	{
+		Layout = "~/Views/Shared/_Layout.cshtml";
+	}
+}
+
+<div class="container">
+	<div class="">
+		<h4>Order</h4>
+		<hr />
+		<dl>
+			<dt>
+				@Html.DisplayNameFor(model => model.Book.Title)
+			</dt>
+			<dd>
+				<strong>@Html.DisplayFor(model => model.Book.Title)</strong> - by @Html.DisplayFor(model => model.Book.Author) - <i>@Html.DisplayFor(model => model.Book.Price)</i>
+			</dd>
+			<dt>
+				@Html.DisplayNameFor(model => model.ClientName)
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.ClientName)
+			</dd>
+			<dt>
+				Address
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.Street), @Html.DisplayFor(model => model.City),
+				@Html.DisplayFor(model => model.State),
+
+
+			</dd>
+			<dd>@Html.DisplayFor(model => model.Country) -@Html.DisplayFor(model => model.Zip)</dd>
+			<dd>
+				@Html.DisplayFor(model => model.Phone)
+			</dd>
+			<dd>
+				@Model.Email
+			</dd>
+		</dl>
+	</div>
+</div>
+<div>
+	<a asp-action="Index"><span class="fa fa-arrow-circle-left"></span> Back to List</a>
+</div>

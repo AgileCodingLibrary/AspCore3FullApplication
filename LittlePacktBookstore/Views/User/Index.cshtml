@@ -1,0 +1,48 @@
+﻿@model IEnumerable<LittlePacktBookstore.ViewModels.UserViewModel>
+@{
+	ViewData["Title"] = "List Users";
+	Layout = "~/Views/Shared/admin/_adminlayout.cshtml";
+}
+
+<h2>User List</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.FirstName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.LastName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Email)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.HiddenFor(modelItem => item.Id)
+					@Html.DisplayFor(modelItem => item.FirstName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.LastName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Email)
+				</td>
+				<td>
+					<a asp-action="details" asp-controller="user" asp-route-id="@item.Id" title="Details">
+						<span class="fa fa-th-list"></span>
+					</a>
+					<a asp-action="delete" asp-controller="user" asp-route-id="@item.Id" title="Delete">
+						<span class="fa fa-times text-danger"></span>
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

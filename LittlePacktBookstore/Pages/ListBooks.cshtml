@@ -1,0 +1,67 @@
+﻿@page
+@model ListBooksModel
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+	<div class="jumbotron">
+		<h2 class="text-center">List All Books</h2>
+	</div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>
+						@Html.DisplayNameFor(x => x.Books[0].Title)
+					</th>
+					<th>
+						@Html.DisplayNameFor(x => x.Books[0].Description)
+					</th>
+					<th>
+						@Html.DisplayNameFor(x => x.Books[0].Author)
+					</th>
+					<th>
+						@Html.DisplayNameFor(x => x.Books[0].PublishDate)
+					</th>
+					<th>
+						@Html.DisplayNameFor(x => x.Books[0].Price)
+					</th>
+					<th>
+						@Html.DisplayNameFor(x => x.Books[0].image)
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.Books)
+				{
+					<tr>
+						<td>
+							@Html.DisplayFor(x => item.Title)
+						</td>
+						<td>
+							@Html.DisplayFor(x => item.Description)
+						</td>
+						<td>
+							@Html.DisplayFor(x => item.Author)
+						</td>
+						<td>
+							@Html.DisplayFor(x => item.PublishDate)
+						</td>
+						<td>
+							@Html.DisplayFor(x => item.Price)
+						</td>
+						<td>
+							@Html.DisplayFor(x => item.image)
+						</td>
+						<td>
+							<a asp-page="./EditBook" asp-route-id="@item.Id">Edit</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+
+		</table>
+	</div>
+</div>

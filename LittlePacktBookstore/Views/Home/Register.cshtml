@@ -1,0 +1,67 @@
+﻿@model LittlePacktBookstore.Models.Registration
+@{
+	ViewData["Title"] = "Register";
+}
+
+<div class="container">
+	<div class="jumbotron">
+		<h2 class="text-center">Register using HTML Tag Helper</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+			{
+				@Html.ValidationSummary(false, "", new { @class = "text-danger" });
+				<div class="form-group">
+					@Html.Label("FirstName", "First Name", new { @class = "control-label" })
+					@Html.TextBox("FirstName", "", new { @class = "form-control", placeholder = "FirstName" })
+					@Html.ValidationMessage("FirstName", "", new { @class = "text-danger" })
+				</div>
+				<div class="form-group">
+					@Html.Label("LastName", "Last Name", new { @class = "control-label" })
+					@Html.TextBox("LastName", "", new { @class = "form-control", placeholder = "Last Name" })
+					@Html.ValidationMessage("LastName", "", new { @class = "text-danger" })
+				</div>
+				<div class="form-group">
+					@Html.Label("Email", "Email", new { @class = "control-label"})
+					@Html.TextBox("Email", "", new { @class = "form-control", placeholder = "Email"})
+					@Html.ValidationMessage("Email", "", new { @class = "text-danger" })
+				</div>
+				@*<div class="form-group">
+					@Html.LabelFor(x => x.MailingAddress.Address1, new { @class = "control-label" })
+					@Html.TextBoxFor(x => x.MailingAddress.Address1, new { @class = "form-control", placeholder = "Address Line 1" })
+					@Html.ValidationMessageFor(x => x.MailingAddress.Address1, "", new { @class = "text-danger" })
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(x => x.MailingAddress.Address2, new { @class = "control-label" })
+					@Html.TextBoxFor(x => x.MailingAddress.Address2, new { @class = "form-control", placeholder = "Address Line 2" })
+					@Html.ValidationMessageFor(x => x.MailingAddress.Address2, "", new { @class = "text-danger" })
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(x => x.MailingAddress.City, new { @class = "control-label" })
+					@Html.TextBoxFor(x => x.MailingAddress.City, new { @class = "form-control", placeholder = "City" })
+					@Html.ValidationMessageFor(x => x.MailingAddress.Address2, "", new { @class = "text-danger" })
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(x => x.MailingAddress.Zip, new { @class = "control-label" })
+					@Html.TextBoxFor(x => x.MailingAddress.Zip, new { @class = "form-control", placeholder = "Zip" })
+					@Html.ValidationMessageFor(x => x.MailingAddress.Zip, "", new { @class = "text-danger" })
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(x => x.MailingAddress.State, new { @class = "control-label" })
+					@Html.TextBoxFor(x => x.MailingAddress.State, new { @class = "form-control", placeholder = "State" })
+					@Html.ValidationMessageFor(x => x.MailingAddress.State, "", new { @class = "text-danger" })
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(x => x.MailingAddress.Country, new { @class = "control-label" })
+					@Html.TextBoxFor(x => x.MailingAddress.Country, new { @class = "form-control", placeholder = "Country" })
+					@Html.ValidationMessageFor(x => x.MailingAddress.Country, "", new { @class = "text-danger" })
+				</div>*@
+				@await Component.InvokeAsync("Address",Model.MailingAddress)
+				<div class="form-group">
+					<input type="submit" value="Register" class="btn btn-default" />
+				</div>
+			}
+		</div>
+	</div>
+</div>
